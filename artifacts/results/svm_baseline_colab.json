@@ -1,0 +1,28 @@
+{
+  "run": "colab",
+  "python": "3.13.18",
+  "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+  "scikit_learn": "1.6.1",
+  "data_revision": "57ec275d8078af65b7731c2a98be812d844a6d6b",
+  "split_sha256": "609612f252faf7af963e08178b449d046d93ea0c03dedf4c30136ee2d01d28f0",
+  "split_seed": 42,
+  "fitting_rows": 8003,
+  "validation_rows": 2000,
+  "classes": 77,
+  "ngram_range": [
+    1,
+    1
+  ],
+  "min_df": 1,
+  "C": 1.0,
+  "svm_seed": 42,
+  "max_iter": 1000,
+  "iterations": 13,
+  "converged": true,
+  "validation_macro_f1": 0.8822170424417443,
+  "reload_matches": 2000,
+  "demo_text": "When will my card arrive?",
+  "demo_label": "card_delivery_estimate",
+  "model_filename": "svm_baseline_colab.joblib",
+  "model_sha256": "4e7f6f8288e91b1412f5474199e7d82c8e146f73e32f3279d748e40ab9c64bc0"
+}

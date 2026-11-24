@@ -22,11 +22,17 @@ Dalam proses terminal terpisah, model lokal dan salinannya di Drive sama-sama me
 
 Kode, notebook, dan laporan lokal tersimpan dalam commit `0cc891e`. Test resmi belum dievaluasi.
 
-### Langkah berikutnya · Demo Colab dan laptop
+### Verifikasi demo Colab dan laptop
 
-Pada 24 November, notebook sudah tersedia di Drive. Pelatihan Colab dan verifikasi model hasil Colab di laptop masih menunggu eksekusi.
+Checklist demo diselesaikan pada 24 November 2026.
 
-- [ ] Di Google Drive, buka `Skripsi Banking77 → notebooks → svm_baseline.ipynb` dengan Google Colaboratory. Pilih runtime **CPU**, klik **Jalankan semua**, lalu hubungkan akun Drive yang menyimpan folder proyek ketika diminta.
-- [ ] Setelah sel terakhir selesai, catat label untuk “When will my card arrive?” dan SHA-256 yang ditampilkan. Pastikan model `models/svm_baseline_colab.joblib` dan laporan `results/svm_baseline_colab.json` tersedia di folder Drive proyek.
-- [ ] Setelah model tersinkron ke laptop, jalankan perintah PowerShell di [panduan demo terminal](README.md#baseline-tf-idfsvm-dan-demo-terminal). Bandingkan SHA-256 berkas dan label terminal dengan keluaran sel terakhir Colab untuk pertanyaan yang sama.
-- [ ] Tambahkan entri logbook bertanggal yang memuat macro-F1 validasi Colab, lokasi laporan, hasil pemeriksaan checksum, serta kedua label aktual. Jika checksum dan label cocok, tandai demo terminal selesai di Roadmap Coding Banking77 dan lanjutkan ke tuning 12 konfigurasi SVM.
+- [x] Di Google Drive, buka `Skripsi Banking77 → notebooks → svm_baseline.ipynb` dengan Google Colaboratory. Pilih runtime **CPU**, klik **Jalankan semua**, lalu hubungkan akun Drive yang menyimpan folder proyek ketika diminta.
+- [x] Setelah sel terakhir selesai, catat label untuk “When will my card arrive?” dan SHA-256 yang ditampilkan. Pastikan model `models/svm_baseline_colab.joblib` dan laporan `results/svm_baseline_colab.json` tersedia di folder Drive proyek.
+- [x] Setelah model tersinkron ke laptop, jalankan perintah PowerShell di [panduan demo terminal](README.md#baseline-tf-idfsvm-dan-demo-terminal). Bandingkan SHA-256 berkas dan label terminal dengan keluaran sel terakhir Colab untuk pertanyaan yang sama.
+- [x] Tambahkan entri logbook bertanggal yang memuat macro-F1 validasi Colab, lokasi laporan, hasil pemeriksaan checksum, serta kedua label aktual. Jika checksum dan label cocok, tandai demo terminal selesai di Roadmap Coding Banking77 dan lanjutkan ke tuning 12 konfigurasi SVM.
+
+## 24 November 2026 · Hasil verifikasi model Colab di laptop
+
+Colab melatih baseline pada 8.003 baris fitting menggunakan indeks seed 42 yang sama dengan repo. Macro-F1 pada 2.000 baris validasi adalah **0,882217**. Seluruh 2.000 prediksi validasi tetap sama setelah model dimuat ulang di Colab. Model ada di Drive pada `Skripsi Banking77/models/svm_baseline_colab.joblib`. Laporan `results/svm_baseline_colab.json` di Drive dan [salinannya di repo](artifacts/results/svm_baseline_colab.json) memiliki checksum yang sama.
+
+Di laptop, SHA-256 model dari Drive cocok dengan keluaran sel terakhir Colab dan laporan JSON, yaitu `4e7f6f8288e91b1412f5474199e7d82c8e146f73e32f3279d748e40ab9c64bc0`. Untuk “When will my card arrive?”, Colab menghasilkan `card_delivery_estimate` dan terminal laptop menghasilkan `card_delivery_estimate` saat memuat model tersebut. Target demo SVM di terminal selesai. Langkah berikutnya adalah tuning 12 konfigurasi SVM pada split validasi yang sama.
